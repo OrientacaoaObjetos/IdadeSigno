@@ -1,6 +1,6 @@
 # IdadeSigno
 
-O objetivo desse exercícios é praticar como os métodos de acesso não precisam necessariamente representar um atributo da classe. 
+O objetivo desse projeto é praticar como os métodos de acesso não precisam necessariamente representar um atributo da classe. 
 
 A partir de uma data de nascimento será obtido a idade e o signo.
 
