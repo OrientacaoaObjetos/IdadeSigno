@@ -10,10 +10,13 @@ public class Pessoa {
 	}
 
 	public Integer getIdade() {
+		Relogio relogio = new Relogio(0L);
 		Calendar dataNascimento = Calendar.getInstance();
 		dataNascimento.setTime(dataDeNascimento);
 		
 		Calendar hoje = Calendar.getInstance();
+		hoje.setTimeInMillis(relogio.agora());
+		
 		int idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
 		
 		if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
@@ -48,21 +51,23 @@ public class Pessoa {
 		} else if (isEscorpiao(dataNascimento)) {
 			return "Escorpião";
 		} else if (isSargitario(dataNascimento)) {
-			return "Escorpião";
+			return "Sargitário";
 		} else if (isCapricornio(dataNascimento)) {
-			return "Escorpião";
+			return "Capricórnio";
 		} else if (isAquario(dataNascimento)) {
-			return "Escorpião";
+			return "Aquário";
 		} else if (isPeixes(dataNascimento)) {
-			return "Escorpião";
+			return "Peixes";
 		}
 		
 		return "";
 	}
 	
 	private boolean isAries(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21 && dataNascimento.get(Calendar.MONTH) == 3) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20 && dataNascimento.get(Calendar.MONTH) == 4)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 3 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 4 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20) {
 			return true;
 		}
 		
@@ -70,8 +75,10 @@ public class Pessoa {
 	}
 	
 	private boolean isTouro(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21 && dataNascimento.get(Calendar.MONTH) == 4) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20 && dataNascimento.get(Calendar.MONTH) == 5)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 4 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 5 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20) {
 			return true;
 		}
 		
@@ -79,8 +86,10 @@ public class Pessoa {
 	}
 	
 	private boolean isGemeos(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21 && dataNascimento.get(Calendar.MONTH) == 5) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20 && dataNascimento.get(Calendar.MONTH) == 6)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 5 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 6 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20) {
 			return true;
 		}
 		
@@ -97,8 +106,10 @@ public class Pessoa {
 	}
 	
 	private boolean isLeao(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22 && dataNascimento.get(Calendar.MONTH) == 7) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22 && dataNascimento.get(Calendar.MONTH) == 8)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 7 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 8 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22) {
 			return true;
 		}
 		
@@ -106,8 +117,10 @@ public class Pessoa {
 	}
 	
 	private boolean isVirgem(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23 && dataNascimento.get(Calendar.MONTH) == 8) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22 && dataNascimento.get(Calendar.MONTH) == 9)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 8 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 9 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22) {
 			return true;
 		}
 		
@@ -115,8 +128,10 @@ public class Pessoa {
 	}
 	
 	private boolean isLibra(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23 && dataNascimento.get(Calendar.MONTH) == 9) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22 && dataNascimento.get(Calendar.MONTH) == 10)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 9 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 10 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 22) {
 			return true;
 		}
 		
@@ -124,8 +139,10 @@ public class Pessoa {
 	}
 	
 	private boolean isEscorpiao(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23 && dataNascimento.get(Calendar.MONTH) == 10) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 21 && dataNascimento.get(Calendar.MONTH) == 11)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 10 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 23) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 11 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 21) {
 			return true;
 		}
 		
@@ -133,8 +150,10 @@ public class Pessoa {
 	}
 	
 	private boolean isSargitario(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22 && dataNascimento.get(Calendar.MONTH) == 11) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 21 && dataNascimento.get(Calendar.MONTH) == 12)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 11 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 12 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 21) {
 			return true;
 		}
 		
@@ -142,8 +161,10 @@ public class Pessoa {
 	}
 	
 	private boolean isCapricornio(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22 && dataNascimento.get(Calendar.MONTH) == 12) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20 && dataNascimento.get(Calendar.MONTH) == 1)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 12 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 22) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 1 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20) {
 			return true;
 		}
 		
@@ -151,8 +172,10 @@ public class Pessoa {
 	}
 	
 	private boolean isAquario(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21 && dataNascimento.get(Calendar.MONTH) == 1) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 19 && dataNascimento.get(Calendar.MONTH) == 2)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 1 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 21) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 2 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 19) {
 			return true;
 		}
 		
@@ -160,8 +183,10 @@ public class Pessoa {
 	}
 	
 	private boolean isPeixes(Calendar dataNascimento) {
-		if ((dataNascimento.get(Calendar.DAY_OF_MONTH) >= 20 && dataNascimento.get(Calendar.MONTH) == 2) && 
-			(dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20 && dataNascimento.get(Calendar.MONTH) == 3)) {
+		if (dataNascimento.get(Calendar.MONTH)+1 == 2 && dataNascimento.get(Calendar.DAY_OF_MONTH) >= 20) {
+			return true;
+		}
+		if (dataNascimento.get(Calendar.MONTH)+1 == 3 && dataNascimento.get(Calendar.DAY_OF_MONTH) <= 20) {
 			return true;
 		}
 		
